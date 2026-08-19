@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Cracken.one — ROOT 3D Upgrade Collection</title>
+  <style>
+    :root {
+      --orange: #FF5E2A;
+      --burgundy: #60000B;
+      --silver: #DADADA;
+      --black: #000;
+      --white: #F7F7F5;
+      --surface: #0B0B0B;
+      --surface-2: #111;
+      --surface-3: #171717;
+      --text: #E7E7E7;
+      --muted: #B0B0B0;
+      --muted-2: #858585;
+      --orange-soft: rgba(255, 94, 42, .10);
+      --orange-border: rgba(255, 94, 42, .32);
+      --border: rgba(218, 218, 218, .11);
+      --border-strong: rgba(218, 218, 218, .20);
+      --r-sm: 10px;
+      --r-md: 16px;
+      --r-lg: 24px;
+      --r-xl: 34px;
+      --container: 1280px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 88% -8%, rgba(96, 0, 11, .58), transparent 30%), var(--black);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    a {
+      color: inherit
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: auto
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .016;
+      z-index: 1000;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, .25) 3px)
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, .9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px
+    }
+
+    .brand-logo {
+      height: 42px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border-strong)
+    }
+
+    .brand-context {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .nav {
+      display: flex;
+      gap: 26px
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .2s
+    }
+
+    .nav a:hover {
+      color: var(--orange)
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase
+    }
+
+    .kicker::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--orange)
+    }
+
+    .section {
+      padding: 88px 0
+    }
+
+    .section-alt {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .section-head {
+      margin-bottom: 38px
+    }
+
+    .section-title {
+      max-width: 820px;
+      margin: 12px 0 15px;
+      color: var(--white);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 850;
+      line-height: .98;
+      letter-spacing: -.05em
+    }
+
+    .section-description {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7
+    }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      transition: .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--black)
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-strong);
+      background: transparent;
+      color: var(--silver)
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      padding: 86px 0 52px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 21px 0 22px;
+      color: var(--white);
+      font-size: clamp(54px, 8vw, 96px);
+      font-weight: 900;
+      line-height: .86;
+      letter-spacing: -.07em;
+      text-transform: uppercase
+    }
+
+    .hero h1 span {
+      color: var(--orange)
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .faction-stage {
+      position: relative;
+      min-height: 560px
+    }
+
+    .faction-stage::before {
+      content: "";
+      position: absolute;
+      inset: 8% 0 4% 7%;
+      background: radial-gradient(circle at 52% 45%, rgba(255, 94, 42, .18), transparent 33%), radial-gradient(circle at 62% 54%, rgba(96, 0, 11, .40), transparent 60%);
+      filter: blur(30px)
+    }
+
+    .hero-faction {
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-items: center;
+      filter: drop-shadow(0 20px 26px rgba(0, 0, 0, .45));
+      transition: .25s;
+      transform: rotate(var(--rot, 0deg))
+    }
+
+    .hero-faction:hover {
+      transform: translateY(-8px) scale(1.05) rotate(var(--rot, 0deg));
+      z-index: 20
+    }
+
+    .hero-faction img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain
+    }
+
+    .h1 {
+      left: 4%;
+      top: 8%;
+      --rot: -8deg
+    }
+
+    .h2 {
+      left: 26%;
+      top: 0;
+      --rot: 5deg
+    }
+
+    .h3 {
+      left: 51%;
+      top: 8%;
+      --rot: -3deg
+    }
+
+    .h4 {
+      left: 76%;
+      top: 2%;
+      --rot: 7deg
+    }
+
+    .h5 {
+      left: 13%;
+      top: 35%;
+      --rot: 5deg
+    }
+
+    .h6 {
+      left: 39%;
+      top: 30%;
+      --rot: -5deg
+    }
+
+    .h7 {
+      left: 66%;
+      top: 34%;
+      --rot: 4deg
+    }
+
+    .h8 {
+      left: 2%;
+      top: 62%;
+      --rot: -5deg
+    }
+
+    .h9 {
+      left: 26%;
+      top: 57%;
+      --rot: 6deg
+    }
+
+    .h10 {
+      left: 51%;
+      top: 64%;
+      --rot: -4deg
+    }
+
+    .h11 {
+      left: 75%;
+      top: 58%;
+      --rot: 5deg
+    }
+
+    .h12 {
+      left: 38%;
+      top: 81%;
+      --rot: 3deg
+    }
+
+    .h13 {
+      left: 64%;
+      top: 80%;
+      --rot: -5deg
+    }
+
+    .hero-label {
+      position: absolute;
+      right: 0;
+      bottom: -2%;
+      color: rgba(255, 255, 255, .35);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .17em
+    }
+
+    .stats {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .stat {
+      padding: 24px 20px;
+      border-right: 1px solid var(--border)
+    }
+
+    .stat:last-child {
+      border-right: 0
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 30px;
+      font-weight: 900
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    /* FACTION GUIDE */
+    .faction-guide {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .fg {
+      min-height: 168px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: var(--surface-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: .2s
+    }
+
+    .fg:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange-border);
+      background: var(--surface-3)
+    }
+
+    .fg img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain
+    }
+
+    .fg strong {
+      color: var(--white);
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.3
+    }
+
+    .fg span {
+      font-size: 9px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .fg:hover {
+      cursor: pointer;
+    }
+
+    .fg:hover.marquise {
+      background-color: #c66212;
+    }
+
+    .fg:hover.eyrie {
+      background-color: #2673be;
+    }
+
+    .fg:hover.alliance {
+      background-color: #077e41;
+    }
+
+    .fg:hover.vagabond {
+      background-color: #7c7b7b;
+    }
+
+    .fg:hover.lizard {
+      background-color: #f0e36a;
+    }
+
+    .fg:hover.riverfolk {
+      background-color: #339892;
+    }
+
+    .fg:hover.duchy {
+      background-color: #f4d9be;
+    }
+
+
+    .fg:hover.corvid {
+      background-color: #84299a;
+    }
+
+
+    .fg:hover.hundreds {
+      background-color: #7e1d29;
+    }
+
+    .fg:hover.keepers {
+      background-color: #5c5f66;
+    }
+
+    .fg:hover.lilypad {
+      background-color: #a48c16;
+    }
+
+    .fg:hover.twilight {
+      background-color: #4e1f0a;
+    }
+
+    .fg:hover.knaves {
+      background-color: #5c6c6c;
+    }
+
+    /* EXPANSION SELECTOR */
+    .expansion-selector {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px
+    }
+
+    .expansion-button {
+      min-height: 165px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: var(--surface-2);
+      color: var(--silver);
+      text-align: left;
+      transition: .2s
+    }
+
+    .expansion-button:hover,
+    .expansion-button.active {
+      transform: translateY(-2px);
+      border-color: var(--orange-border)
+    }
+
+    .expansion-button.active {
+      background: linear-gradient(145deg, rgba(96, 0, 11, .48), var(--surface-2))
+    }
+
+    .exp-code {
+      display: block;
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .14em
+    }
+
+    .exp-name {
+      display: block;
+      margin-top: 25px;
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 850
+    }
+
+    .exp-icons {
+      display: flex;
+      gap: 7px;
+      margin-top: 14px
+    }
+
+    .exp-icons img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain
+    }
+
+    /* CORE */
+    .core {
+      padding: clamp(30px, 5vw, 54px);
+      border: 1px solid var(--orange-border);
+      border-radius: var(--r-xl);
+      background: radial-gradient(circle at 100% 0, rgba(255, 94, 42, .10), transparent 35%), linear-gradient(140deg, rgba(96, 0, 11, .45), transparent 55%), var(--surface)
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .core h2 {
+      margin: 10px 0 12px;
+      color: var(--white);
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: -.055em;
+      text-transform: uppercase
+    }
+
+    .core-copy {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7
+    }
+
+    .core-list {
+      margin-top: 27px;
+      display: grid;
+      gap: 8px
+    }
+
+    .core-item {
+      padding: 13px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      background: rgba(0, 0, 0, .22);
+      font-size: 12px
+    }
+
+    .core-left {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .core-left img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain
+    }
+
+    .core-item span {
+      color: var(--orange);
+      font-weight: 900
+    }
+
+    .price-panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: rgba(0, 0, 0, .35)
+    }
+
+    .price-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .old-price {
+      margin-top: 20px;
+      color: var(--muted-2);
+      text-decoration: line-through;
+      font-size: 14px
+    }
+
+    .price-main {
+      margin-top: 2px;
+      color: var(--white);
+      font-size: clamp(30px, 4vw, 41px);
+      font-weight: 900;
+      letter-spacing: -.045em
+    }
+
+    .price-main small {
+      color: var(--muted);
+      font-size: 10px
+    }
+
+    .save-badge {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900
+    }
+
+    /* FILTERS + PACKS */
+    .controls {
+      margin-bottom: 26px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: var(--surface-2)
+    }
+
+    .control-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: center
+    }
+
+    .control-row+.control-row {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border)
+    }
+
+    .control-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none
+    }
+
+    .filters::-webkit-scrollbar {
+      display: none
+    }
+
+    .filter {
+      flex: 0 0 auto;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850
+    }
+
+    .filter:hover {
+      color: var(--white);
+      border-color: var(--border-strong)
+    }
+
+    .filter.active {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--black)
+    }
+
+    .pack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px
+    }
+
+    .pack {
+      min-height: 365px;
+      padding: 25px 24px 23px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: linear-gradient(145deg, rgba(255, 255, 255, .012), transparent), var(--surface-2);
+      transition: .2s
+    }
+
+    .pack:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange-border);
+      background: var(--surface-3)
+    }
+
+    .pack.hidden {
+      display: none
+    }
+
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .sku {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .10em
+    }
+
+    .count {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #BDBDBD;
+      font-size: 9px;
+      font-weight: 800
+    }
+
+    .pack-icons {
+      height: 56px;
+      margin-top: 18px;
+      display: flex;
+      gap: 8px
+    }
+
+    .pack-icons img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain
+    }
+
+    .pack-icons .emoji {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      font-size: 27px
+    }
+
+    .pack h3 {
+      margin: 14px 0 7px;
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 850;
+      line-height: 1.12;
+      letter-spacing: -.025em
+    }
+
+    .pack-category {
+      color: #A6A6A6;
+      font-size: 10px;
+      letter-spacing: .045em;
+      text-transform: uppercase
+    }
+
+    .includes {
+      margin: 19px 0 25px
+    }
+
+    .includes-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #858585;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .includes p {
+      margin: 0;
+      color: #C4C4C4;
+      font-size: 12px;
+      line-height: 1.75
+    }
+
+    .pack-price {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #fff;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -.025em
+    }
+
+    .pack-price small {
+      margin-left: 4px;
+      color: #A5A5A5;
+      font-size: 9px
+    }
+
+    /* PATH */
+    .path-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 18px
+    }
+
+    .path-options {
+      display: grid;
+      gap: 8px
+    }
+
+    .path-button {
+      position: relative;
+      padding: 17px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      font-size: 12px;
+      font-weight: 800
+    }
+
+    .path-button:hover,
+    .path-button.active {
+      color: var(--white);
+      background: var(--surface-2)
+    }
+
+    .path-button.active {
+      border-color: var(--orange-border)
+    }
+
+    .path-button.active::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 12px;
+      bottom: 12px;
+      width: 3px;
+      background: var(--orange)
+    }
+
+    .recommendation {
+      min-height: 310px;
+      padding: clamp(26px, 5vw, 46px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: radial-gradient(circle at 90% 0, rgba(255, 94, 42, .10), transparent 35%), linear-gradient(145deg, rgba(96, 0, 11, .3), transparent), var(--surface-2)
+    }
+
+    .rec-label {
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .15em
+    }
+
+    .recommendation h3 {
+      margin: 10px 0;
+      color: var(--white);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.05em
+    }
+
+    .recommendation p {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7
+    }
+
+    .rec-price {
+      margin-top: 20px;
+      color: var(--white);
+      font-size: 26px;
+      font-weight: 900
+    }
+
+    /* BUNDLES */
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .bundle {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: var(--surface-2)
+    }
+
+    .bundle-icons {
+      display: flex;
+      gap: 7px;
+      height: 44px;
+      margin-bottom: 18px
+    }
+
+    .bundle-icons img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain
+    }
+
+    .bundle h3 {
+      margin: 0 0 8px;
+      color: var(--white);
+      font-size: 24px
+    }
+
+    .bundle-old {
+      color: var(--muted-2);
+      text-decoration: line-through;
+      font-size: 12px
+    }
+
+    .bundle-price {
+      margin-top: 4px;
+      color: var(--white);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -.04em
+    }
+
+    .bundle-save {
+      margin-top: 12px;
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900
+    }
+
+    /* COMPLETE */
+    .complete {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(36px, 7vw, 72px);
+      border-radius: var(--r-xl);
+      background: radial-gradient(circle at 85% 15%, rgba(255, 255, 255, .09), transparent 25%), linear-gradient(125deg, var(--orange), #E54120);
+      color: var(--black)
+    }
+
+    .complete::after {
+      content: "19";
+      position: absolute;
+      right: -25px;
+      bottom: -105px;
+      color: rgba(0, 0, 0, .08);
+      font-size: 310px;
+      font-weight: 900;
+      line-height: 1
+    }
+
+    .discount {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--orange);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em
+    }
+
+    .complete h2 {
+      position: relative;
+      z-index: 2;
+      margin: 20px 0 10px;
+      font-size: clamp(48px, 8vw, 86px);
+      font-weight: 950;
+      line-height: .84;
+      letter-spacing: -.07em;
+      text-transform: uppercase
+    }
+
+    .complete-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 690px;
+      color: rgba(0, 0, 0, .68);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.7
+    }
+
+    .complete-pricing {
+      position: relative;
+      z-index: 2;
+      margin-top: 38px;
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 26px
+    }
+
+    .complete-old {
+      color: rgba(0, 0, 0, .5);
+      font-size: 14px;
+      text-decoration: line-through
+    }
+
+    .complete-price {
+      font-size: clamp(40px, 6vw, 62px);
+      font-weight: 950;
+      line-height: 1
+    }
+
+    .complete-price small {
+      font-size: 10px
+    }
+
+    .saving {
+      margin-bottom: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(0, 0, 0, .2);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900
+    }
+
+    .footer {
+      padding: 50px 0;
+      border-top: 1px solid var(--border);
+      color: #858585;
+      font-size: 10px
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px
+    }
+
+    .footer-logo {
+      height: 36px;
+      width: auto
+    }
+
+    @media(max-width:1000px) {
+
+      .hero-grid,
+      .core-grid,
+      .path-grid {
+        grid-template-columns: 1fr
+      }
+
+      .pack-grid,
+      .bundle-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .faction-guide {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      .expansion-selector {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:650px) {
+      .container {
+        width: min(calc(100% - 24px), var(--container))
+      }
+
+      .brand-divider,
+      .brand-context,
+      .nav {
+        display: none
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 62px 0 42px
+      }
+
+      .hero h1 {
+        font-size: 53px
+      }
+
+      .faction-stage {
+        min-height: 430px
+      }
+
+      .hero-faction {
+        width: 76px;
+        height: 76px
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .faction-guide {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .expansion-selector,
+      .pack-grid,
+      .bundle-grid {
+        grid-template-columns: 1fr
+      }
+
+      .control-row {
+        grid-template-columns: 1fr
+      }
+
+      .section {
+        padding: 60px 0
+      }
+
+      .footer-inner {
+        display: grid
+      }
+
+      .btn {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand"><img src="assets/cracken-logo.png" alt="Cracken.one" class="brand-logo">
+        <div class="brand-divider"></div>
+        <div class="brand-context">Tabletop Gaming<br>Upgrade Collection</div>
+      </div>
+      <nav class="nav"><a href="#start">Choose Expansion</a><a href="#factions">Factions</a><a
+          href="#collection">Collection</a><a href="#bundles">Bundles</a><a href="#complete">Complete</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="kicker">Cracken.one × ROOT Upgrade Collection</span>
+            <h1>Rule the<br><span>Woodland.</span></h1>
+            <p class="hero-copy">Leave the flat tokens behind. Upgrade ROOT with a modular multicolor collection of
+              faction buildings, structures, relics, landmarks and map elements — organized by the expansions you
+              actually own.</p>
+            <div class="hero-actions"><a href="#start" class="btn btn-primary">Choose Your Expansion</a><a
+                href="#collection" class="btn btn-outline">Explore All 19 Packs</a></div>
+          </div>
+          <div class="faction-stage">
+            <div class="hero-faction h1"><img src="assets/factions/marquise-de-cat.svg" alt=""></div>
+            <div class="hero-faction h2"><img src="assets/factions/eyrie-dynasties.svg" alt=""></div>
+            <div class="hero-faction h3"><img src="assets/factions/woodland-alliance.svg" alt=""></div>
+            <div class="hero-faction h4"><img src="assets/factions/vagabond.svg" alt=""></div>
+            <div class="hero-faction h5"><img src="assets/factions/lizard-cult.svg" alt=""></div>
+            <div class="hero-faction h6"><img src="assets/factions/riverfolk-company.svg" alt=""></div>
+            <div class="hero-faction h7"><img src="assets/factions/underground-duchy.svg" alt=""></div>
+            <div class="hero-faction h8"><img src="assets/factions/corvid-conspiracy.svg" alt=""></div>
+            <div class="hero-faction h9"><img src="assets/factions/lord-of-the-hundreds.svg" alt=""></div>
+            <div class="hero-faction h10"><img src="assets/factions/keepers-in-iron.svg" alt=""></div>
+            <div class="hero-faction h11"><img src="assets/factions/lilypad-diaspora.svg" alt=""></div>
+            <div class="hero-faction h12"><img src="assets/factions/twilight-council.svg" alt=""></div>
+            <div class="hero-faction h13"><img src="assets/factions/knaves-of-the-deepwood.svg" alt=""></div>
+            <div class="hero-label">13 FACTIONS / 19 UPGRADE PACKS</div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>19</strong><span>Upgrade Packs</span></div>
+          <div class="stat"><strong>13</strong><span>Major Factions</span></div>
+          <div class="stat"><strong>~192</strong><span>Extended Pieces</span></div>
+          <div class="stat"><strong>~20%</strong><span>Complete Saving</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="start">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Choose Your Expansion</span>
+          <h2 class="section-title">Where does your woodland grow?</h2>
+          <p class="section-description">Pick the ROOT content you own and the collection instantly focuses on the
+            relevant packs.</p>
+        </div>
+        <div class="expansion-selector">
+          <button class="expansion-button active" data-exp-btn="base" onclick="selectExpansion('base')"><span
+              class="exp-code">WOODLAND / 01</span><span class="exp-name">Base Game</span><span class="exp-icons"><img
+                src="assets/factions/marquise-de-cat.svg"><img src="assets/factions/eyrie-dynasties.svg"><img
+                src="assets/factions/woodland-alliance.svg"><img src="assets/factions/vagabond.svg"></span></button>
+          <button class="expansion-button" data-exp-btn="riverfolk" onclick="selectExpansion('riverfolk')"><span
+              class="exp-code">WOODLAND / 02</span><span class="exp-name">Riverfolk</span><span class="exp-icons"><img
+                src="assets/factions/lizard-cult.svg"><img src="assets/factions/riverfolk-company.svg"></span></button>
+          <button class="expansion-button" data-exp-btn="underworld" onclick="selectExpansion('underworld')"><span
+              class="exp-code">WOODLAND / 03</span><span class="exp-name">Underworld</span><span class="exp-icons"><img
+                src="assets/factions/underground-duchy.svg"><img
+                src="assets/factions/corvid-conspiracy.svg"></span></button>
+          <button class="expansion-button" data-exp-btn="marauder" onclick="selectExpansion('marauder')"><span
+              class="exp-code">WOODLAND / 04</span><span class="exp-name">Marauder</span><span class="exp-icons"><img
+                src="assets/factions/lord-of-the-hundreds.svg"><img
+                src="assets/factions/keepers-in-iron.svg"></span></button>
+          <button class="expansion-button" data-exp-btn="homeland" onclick="selectExpansion('homeland')"><span
+              class="exp-code">WOODLAND / 05</span><span class="exp-name">Homeland</span><span class="exp-icons"><img
+                src="assets/factions/lilypad-diaspora.svg"><img src="assets/factions/twilight-council.svg"><img
+                src="assets/factions/knaves-of-the-deepwood.svg"></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="factions">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Faction Guide</span>
+          <h2 class="section-title">Thirteen factions. One visual language.</h2>
+          <p class="section-description">These are the final SVG symbols used consistently throughout the retail and
+            wholesale systems.</p>
+        </div>
+        <div class="faction-guide" id="factionGuide"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="core">
+          <div class="core-grid">
+            <div><span class="kicker">Your First Woodland Loadout</span>
+              <h2>ROOT CORE</h2>
+              <p class="core-copy">If you're starting with the Base Game, these four faction upgrades are the natural
+                entry point. Optional landmarks, Hirelings and map extras stay outside the bundle.</p>
+              <div class="core-list">
+                <div class="core-item">
+                  <div class="core-left"><img src="assets/factions/marquise-de-cat.svg"><strong>Marquise de Cat</strong>
+                  </div><span>RU-01</span>
+                </div>
+                <div class="core-item">
+                  <div class="core-left"><img src="assets/factions/eyrie-dynasties.svg"><strong>Eyrie Dynasties</strong>
+                  </div><span>RU-02</span>
+                </div>
+                <div class="core-item">
+                  <div class="core-left"><img src="assets/factions/woodland-alliance.svg"><strong>Woodland
+                      Alliance</strong></div><span>RU-03</span>
+                </div>
+                <div class="core-item">
+                  <div class="core-left"><img src="assets/factions/vagabond.svg"><strong>Vagabond / Ruins</strong></div>
+                  <span>RU-04</span>
+                </div>
+              </div>
+            </div>
+            <div class="price-panel">
+              <div class="price-label">Core Upgrade Bundle</div>
+              <div class="old-price">3,750,000 TOMAN</div>
+              <div class="price-main">3,450,000 <small>TOMAN</small></div>
+              <div class="save-badge">SAVE 300,000 TOMAN · 8%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="collection">
+      <div class="container">
+        <div class="section-head"><span class="kicker">The Woodland Arsenal</span>
+          <h2 class="section-title">Build the collection around your factions.</h2>
+          <p class="section-description">Filter by expansion or pack type. Each pack carries the same faction SVG used
+            everywhere else in the system.</p>
+        </div>
+        <div class="controls">
+          <div class="control-row"><span class="control-label">Expansion</span>
+            <div class="filters">
+              <button class="filter active" data-exp-filter="all" onclick="setExpFilter('all')">All</button><button
+                class="filter" data-exp-filter="base" onclick="setExpFilter('base')">Base Game</button><button
+                class="filter" data-exp-filter="riverfolk" onclick="setExpFilter('riverfolk')">Riverfolk</button><button
+                class="filter" data-exp-filter="underworld"
+                onclick="setExpFilter('underworld')">Underworld</button><button class="filter"
+                data-exp-filter="marauder" onclick="setExpFilter('marauder')">Marauder</button><button class="filter"
+                data-exp-filter="homeland" onclick="setExpFilter('homeland')">Homeland</button><button class="filter"
+                data-exp-filter="optional" onclick="setExpFilter('optional')">Optional</button>
+            </div>
+          </div>
+          <div class="control-row"><span class="control-label">Type</span>
+            <div class="filters">
+              <button class="filter active" data-type-filter="all" onclick="setTypeFilter('all')">All
+                Packs</button><button class="filter" data-type-filter="faction"
+                onclick="setTypeFilter('faction')">Faction</button><button class="filter" data-type-filter="map"
+                onclick="setTypeFilter('map')">Map</button><button class="filter" data-type-filter="landmark"
+                onclick="setTypeFilter('landmark')">Landmarks</button><button class="filter" data-type-filter="hireling"
+                onclick="setTypeFilter('hireling')">Hirelings</button>
+            </div>
+          </div>
+        </div>
+        <div class="pack-grid" id="packGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Choose Your Path</span>
+          <h2 class="section-title">What kind of woodland player are you?</h2>
+          <p class="section-description">You don't need all 19 packs at once. Choose what you own and we'll point you
+            toward the right bundle.</p>
+        </div>
+        <div class="path-grid">
+          <div class="path-options">
+            <button class="path-button active" onclick="showGuide('start',this)">I'm starting with ROOT</button>
+            <button class="path-button" onclick="showGuide('riverfolk',this)">I own Riverfolk</button>
+            <button class="path-button" onclick="showGuide('underworld',this)">I own Underworld</button>
+            <button class="path-button" onclick="showGuide('marauder',this)">I own Marauder</button>
+            <button class="path-button" onclick="showGuide('homeland',this)">I own Homeland</button>
+            <button class="path-button" onclick="showGuide('complete',this)">Give me the whole woodland</button>
+          </div>
+          <div class="recommendation"><span class="rec-label">THE CAPTAIN RECOMMENDS</span>
+            <h3 id="guideTitle">ROOT CORE</h3>
+            <p id="guideText">Begin with RU-01 through RU-04. These four packs cover the Base Game factions and create
+              the cleanest entry point into the full upgrade system.</p>
+            <div class="rec-price" id="guidePrice">3,450,000 TOMAN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="bundles">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Bundle Savings</span>
+          <h2 class="section-title">Upgrade more. Pay less than buying pack by pack.</h2>
+          <p class="section-description">Only regular price, bundle price and customer saving are shown here. Internal
+            costing remains private.</p>
+        </div>
+        <div class="bundle-grid" id="bundleGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="complete">
+      <div class="container">
+        <div class="complete"><span class="discount">ALL 19 PACKS · APPROX. 20% OFF</span>
+          <h2>The Complete<br>Woodland.</h2>
+          <p class="complete-copy">The full Cracken.one ROOT upgrade collection — Base Game factions, major expansions,
+            landmarks, map upgrades and optional Hirelings in one complete system.</p>
+          <div class="complete-pricing">
+            <div>
+              <div class="complete-old">18,500,000 TOMAN</div>
+              <div class="complete-price">14,850,000 <small>TOMAN</small></div>
+            </div>
+            <div class="saving">SAVE 3,650,000 TOMAN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><img src="assets/cracken-logo.png" alt="Cracken.one" class="footer-logo"></div>
+      <div>Cracken.one tabletop gaming upgrades.<br>Unofficial third-party upgrade collection. ROOT names and trademarks
+        belong to their respective owners.</div>
+    </div>
+  </footer>
+
+  <script>
+    const icon = {
+      marquise: "assets/factions/marquise-de-cat.svg", eyrie: "assets/factions/eyrie-dynasties.svg", alliance: "assets/factions/woodland-alliance.svg", vagabond: "assets/factions/vagabond.svg",
+      lizard: "assets/factions/lizard-cult.svg", riverfolk: "assets/factions/riverfolk-company.svg", duchy: "assets/factions/underground-duchy.svg", corvid: "assets/factions/corvid-conspiracy.svg",
+      hundreds: "assets/factions/lord-of-the-hundreds.svg", keepers: "assets/factions/keepers-in-iron.svg", lilypad: "assets/factions/lilypad-diaspora.svg", twilight: "assets/factions/twilight-council.svg", knaves: "assets/factions/knaves-of-the-deepwood.svg"
+    };
+    const factions = [
+      ["Marquise de Cat", "Base Game", "marquise"], ["Eyrie Dynasties", "Base Game", "eyrie"], ["Woodland Alliance", "Base Game", "alliance"], ["Vagabond", "Base Game", "vagabond"],
+      ["Lizard Cult", "Riverfolk", "lizard"], ["Riverfolk Company", "Riverfolk", "riverfolk"], ["Underground Duchy", "Underworld", "duchy"], ["Corvid Conspiracy", "Underworld", "corvid"],
+      ["Lord of the Hundreds", "Marauder", "hundreds"], ["Keepers in Iron", "Marauder", "keepers"], ["Lilypad Diaspora", "Homeland", "lilypad"], ["Twilight Council", "Homeland", "twilight"], ["Knaves of the Deepwood", "Homeland", "knaves"]
+    ];
+    document.getElementById("factionGuide").innerHTML = factions.map(f => `<article class="fg ${f[2]}"><img src="${icon[f[2]]}" alt="${f[0]}"><strong>${f[0]}</strong><span>${f[1]}</span></article>`).join("");
+
+    const packs = [
+      {sku: "RU-01", name: "Marquise de Cat", exp: "base", type: "faction", count: "27 PCS", price: "1,600,000", icons: ["marquise"], includes: "Keep · Sawmills · Workshops · Recruiters · Wood"},
+      {sku: "RU-02", name: "Eyrie Dynasties", exp: "base", type: "faction", count: "7 PCS", price: "800,000", icons: ["eyrie"], includes: "Roosts · Roofs / details"},
+      {sku: "RU-03", name: "Woodland Alliance", exp: "base", type: "faction", count: "13 PCS", price: "900,000", icons: ["alliance"], includes: "Bases · Sympathy"},
+      {sku: "RU-04", name: "Vagabond / Ruins", exp: "base", type: "faction", count: "4 PCS", price: "450,000", icons: ["vagabond"], includes: "3D Ruins"},
+      {sku: "RU-05", name: "Map Extras", exp: "underworld", type: "map", count: "2 PCS", price: "600,000", icons: ["🗺️"], includes: "Ferry · Tower"},
+      {sku: "RU-06", name: "Lizard Cult", exp: "riverfolk", type: "faction", count: "15 PCS", price: "1,000,000", icons: ["lizard"], includes: "Gardens"},
+      {sku: "RU-07", name: "Riverfolk Company", exp: "riverfolk", type: "faction", count: "9 PCS", price: "900,000", icons: ["riverfolk"], includes: "Trade Posts"},
+      {sku: "RU-08", name: "Underground Duchy", exp: "underworld", type: "faction", count: "19 PCS", price: "2,000,000", icons: ["duchy"], includes: "Citadels · Markets · Tunnels · Burrow · Crowns"},
+      {sku: "RU-09", name: "Corvid Conspiracy", exp: "underworld", type: "faction", count: "16 PCS", price: "1,000,000", icons: ["corvid"], includes: "Bomb · Extortion · Raid · Snare"},
+      {sku: "RU-10", name: "Lord of the Hundreds", exp: "marauder", type: "faction", count: "11 PCS", price: "1,100,000", icons: ["hundreds"], includes: "Strongholds · Mobs"},
+      {sku: "RU-11", name: "Keepers in Iron", exp: "marauder", type: "faction", count: "18 PCS", price: "1,400,000", icons: ["keepers"], includes: "Waystations · Jewelry · Figures · Tablets"},
+      {sku: "RU-12", name: "Classic Hirelings", exp: "optional", type: "hireling", count: "9 PCS", price: "850,000", icons: ["⚔️"], includes: "Footholds · Vaults"},
+      {sku: "RU-13", name: "Classic Landmarks", exp: "optional", type: "landmark", count: "4 PCS", price: "1,150,000", icons: ["🏛️"], includes: "Black Market · Elder Treetop · Legendary Forge · Lost City"},
+      {sku: "RU-14", name: "Lilypad Diaspora", exp: "homeland", type: "faction", count: "12 PCS", price: "950,000", icons: ["lilypad"], includes: "Enclaves"},
+      {sku: "RU-15", name: "Twilight Council", exp: "homeland", type: "faction", count: "6 PCS", price: "750,000", icons: ["twilight"], includes: "Assemblies"},
+      {sku: "RU-16", name: "Knaves of the Deepwood", exp: "homeland", type: "faction", count: "8 PCS", price: "600,000", icons: ["knaves"], includes: "Acclaim"},
+      {sku: "RU-17", name: "Homeland Landmarks", exp: "homeland", type: "landmark", count: "3 PCS", price: "950,000", icons: ["🏛️"], includes: "Mousehold · Foxburrow · Rabbittown"},
+      {sku: "RU-18", name: "Homeland Map", exp: "homeland", type: "map", count: "4 PCS", price: "700,000", icons: ["🗺️"], includes: "Flood Markers · Pond"},
+      {sku: "RU-19", name: "Homeland Hirelings", exp: "optional", type: "hireling", count: "9 PCS", price: "850,000", icons: ["⚔️"], includes: "Farms · Lilypads"}
+    ];
+    let activeExp = "all", activeType = "all";
+    function iconHTML(i) {return icon[i] ? `<img src="${icon[i]}" alt="">` : `<span class="emoji">${i}</span>`}
+    function renderPacks() {document.getElementById("packGrid").innerHTML = packs.map(p => `<article class="pack" data-exp="${p.exp}" data-type="${p.type}"><div class="pack-head"><span class="sku">${p.sku}</span><span class="count">${p.count}</span></div><div class="pack-icons">${p.icons.map(iconHTML).join("")}</div><h3>${p.name}</h3><span class="pack-category">${p.exp.toUpperCase()} / ${p.type.toUpperCase()}</span><div class="includes"><span class="includes-label">Includes</span><p>${p.includes}</p></div><div class="pack-price">${p.price} <small>TOMAN</small></div></article>`).join(""); applyFilters()}
+    function setExpFilter(v) {activeExp = v; document.querySelectorAll("[data-exp-filter]").forEach(b => b.classList.toggle("active", b.dataset.expFilter === v)); applyFilters()}
+    function setTypeFilter(v) {activeType = v; document.querySelectorAll("[data-type-filter]").forEach(b => b.classList.toggle("active", b.dataset.typeFilter === v)); applyFilters()}
+    function applyFilters() {document.querySelectorAll("#packGrid .pack").forEach(p => p.classList.toggle("hidden", !((activeExp === "all" || p.dataset.exp === activeExp) && (activeType === "all" || p.dataset.type === activeType))))}
+    function selectExpansion(v) {setExpFilter(v); document.querySelectorAll("[data-exp-btn]").forEach(b => b.classList.toggle("active", b.dataset.expBtn === v)); document.getElementById("collection").scrollIntoView({behavior: "smooth"})}
+
+    const guides = {
+      start: {t: "ROOT CORE", x: "Begin with RU-01 through RU-04. These four packs cover the Base Game factions and create the cleanest entry point.", p: "3,450,000 TOMAN"},
+      riverfolk: {t: "RIVERFOLK UPGRADE", x: "Add RU-06 and RU-07 for Lizard Cult and Riverfolk Company.", p: "1,750,000 TOMAN"},
+      underworld: {t: "UNDERWORLD UPGRADE", x: "Combine RU-05, RU-08 and RU-09 for Duchy, Corvid and Ferry / Tower map extras.", p: "3,300,000 TOMAN"},
+      marauder: {t: "MARAUDER UPGRADE", x: "Take RU-10 and RU-11 for Lord of the Hundreds and Keepers in Iron.", p: "2,300,000 TOMAN"},
+      homeland: {t: "HOMELAND UPGRADE", x: "Combine RU-14 through RU-18 for three Homeland factions, landmarks and map upgrades.", p: "3,700,000 TOMAN"},
+      complete: {t: "THE COMPLETE WOODLAND", x: "Take all 19 packs for the strongest collection-level saving.", p: "14,850,000 TOMAN"}
+    };
+    function showGuide(k, b) {document.querySelectorAll(".path-button").forEach(x => x.classList.remove("active")); b.classList.add("active"); guideTitle.textContent = guides[k].t; guideText.textContent = guides[k].x; guidePrice.textContent = guides[k].p}
+
+    const bundles = [
+      {name: "Core Upgrade", old: 3.75, price: 3.45, icons: ["marquise", "eyrie", "alliance", "vagabond"]},
+      {name: "Riverfolk Upgrade", old: 1.90, price: 1.75, icons: ["lizard", "riverfolk"]},
+      {name: "Underworld Upgrade", old: 3.60, price: 3.30, icons: ["duchy", "corvid"]},
+      {name: "Marauder Upgrade", old: 2.50, price: 2.30, icons: ["hundreds", "keepers"]},
+      {name: "Homeland Upgrade", old: 3.95, price: 3.70, icons: ["lilypad", "twilight", "knaves"]},
+      {name: "Classic Add-ons", old: 2.00, price: 1.75, icons: []}
+    ];
+    function fmt(v) {return v.toFixed(2).replace(/\.00$/, "") + "M T"}
+    bundleGrid.innerHTML = bundles.map(b => {let s = b.old - b.price, p = Math.round(s / b.old * 100); return `<article class="bundle"><div class="bundle-icons">${b.icons.map(i => `<img src="${icon[i]}">`).join("")}</div><h3>${b.name}</h3><div class="bundle-old">Regular ${fmt(b.old)}</div><div class="bundle-price">${fmt(b.price)}</div><div class="bundle-save">SAVE ${fmt(s)} · ${p}%</div></article>`}).join("");
+    renderPacks();
+  </script>
+</body>
+
+</html>

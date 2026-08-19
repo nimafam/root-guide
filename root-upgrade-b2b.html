@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<title>Cracken.one — ROOT Wholesale Program</title>
+<style>
+:root{
+ --orange:#FF5E2A;--burgundy:#60000B;--silver:#DADADA;--black:#000;--white:#F7F7F5;
+ --surface:#0B0B0B;--surface-2:#111;--surface-3:#171717;--text:#E7E7E7;--muted:#B0B0B0;--muted-2:#858585;
+ --orange-soft:rgba(255,94,42,.10);--orange-border:rgba(255,94,42,.32);--border:rgba(218,218,218,.11);--border-strong:rgba(218,218,218,.20);
+ --r-sm:10px;--r-md:16px;--r-lg:24px;--r-xl:34px;--container:1280px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 88% -8%,rgba(96,0,11,.58),transparent 30%),var(--black);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}.container{width:min(calc(100% - 40px),var(--container));margin:auto}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.016;z-index:1000;background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.25) 3px)}
+.header{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:18px}.brand-logo{height:42px;width:auto;max-width:190px}.brand-divider{width:1px;height:28px;background:var(--border-strong)}.brand-context{color:var(--muted);font-size:11px;line-height:1.4;text-transform:uppercase;letter-spacing:.06em}
+.nav{display:flex;gap:26px}.nav a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:800}.nav a:hover{color:var(--orange)}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.kicker::before{content:"";width:18px;height:2px;background:var(--orange)}
+.section{padding:88px 0}.section-alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.section-title{max-width:820px;margin:12px 0 15px;color:var(--white);font-size:clamp(36px,5vw,60px);font-weight:850;line-height:.98;letter-spacing:-.05em}.section-description{max-width:760px;margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+.btn{min-height:50px;padding:0 22px;border:0;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:12px;font-weight:900;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--orange);color:var(--black)}.btn-outline{border:1px solid var(--border-strong);background:transparent;color:var(--silver)}
+.hero{min-height:700px;display:flex;align-items:center;padding:86px 0 52px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.hero h1{margin:20px 0 22px;color:var(--white);font-size:clamp(54px,8vw,92px);font-weight:900;line-height:.87;letter-spacing:-.07em;text-transform:uppercase}.hero h1 span{color:var(--orange)}.hero-copy{max-width:650px;color:var(--muted);font-size:17px;line-height:1.75}.hero-actions{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+.assortment{padding:26px;border:1px solid var(--border);border-radius:var(--r-xl);background:linear-gradient(145deg,rgba(96,0,11,.30),transparent 60%),var(--surface);box-shadow:0 30px 80px rgba(0,0,0,.45)}.assortment-top{display:flex;justify-content:space-between;gap:18px;padding-bottom:18px;border-bottom:1px solid var(--border);color:var(--muted);font-size:10px;text-transform:uppercase}.assortment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}.ai{height:82px;display:grid;place-items:center}.ai img{width:72px;height:72px;object-fit:contain}
+.stats{margin-top:58px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.stat{padding:24px 20px;border-right:1px solid var(--border)}.stat:last-child{border-right:0}.stat strong{display:block;color:var(--white);font-size:30px;font-weight:900}.stat span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.benefit{padding:24px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-2)}.benefit strong{display:block;color:var(--white);font-size:20px;margin-bottom:8px}.benefit p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tier{padding:26px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface-2)}.tier.featured{border-color:var(--orange-border);background:linear-gradient(145deg,rgba(96,0,11,.42),var(--surface-2))}.tier-code{color:var(--orange);font-size:10px;font-weight:900;letter-spacing:.14em}.tier h3{margin:18px 0 6px;color:var(--white);font-size:26px}.moq{color:var(--white);font-size:42px;font-weight:900;letter-spacing:-.05em}.discount{display:inline-flex;margin-top:10px;padding:7px 10px;border-radius:999px;background:var(--orange-soft);color:var(--orange);font-size:10px;font-weight:900}.tier p{color:var(--muted);font-size:13px;line-height:1.7}
+.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.catalog-card{padding:22px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-2)}.catalog-icons{display:flex;gap:7px;min-height:50px;margin-bottom:16px}.catalog-icons img{width:48px;height:48px;object-fit:contain}.catalog-card h3{margin:0;color:var(--white);font-size:22px}.catalog-card p{color:var(--muted);font-size:13px;line-height:1.6}.catalog-meta{margin-top:15px;color:var(--orange);font-size:10px;font-weight:900;letter-spacing:.08em}
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-2)}table{width:100%;border-collapse:collapse;min-width:900px}th,td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--border)}th{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em}td{font-size:12px;color:var(--silver)}td:last-child,th:last-child{text-align:right}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-panel{padding:28px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface-2)}.info-panel h3{margin:0 0 10px;color:var(--white);font-size:25px}.info-panel ul{padding-left:18px;color:var(--muted);line-height:1.9;font-size:13px}
+.cta{padding:clamp(36px,6vw,62px);border-radius:var(--r-xl);background:linear-gradient(125deg,var(--orange),#E54120);color:var(--black);display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{margin:8px 0;font-size:clamp(38px,6vw,68px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}.cta p{max-width:650px;color:rgba(0,0,0,.68);font-weight:650}.cta .btn{background:var(--black);color:var(--orange)}
+details{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-2);padding:16px 18px;margin:9px 0}summary{cursor:pointer;color:var(--silver);font-size:12px;font-weight:850}details p{color:var(--muted);font-size:13px;line-height:1.7}
+.footer{padding:50px 0;border-top:1px solid var(--border);color:#858585;font-size:10px}.footer-inner{display:flex;justify-content:space-between;gap:40px}.footer-logo{height:36px;width:auto}
+@media(max-width:1000px){.hero-grid,.order-grid{grid-template-columns:1fr}.benefits{grid-template-columns:repeat(2,1fr)}.tiers,.catalog-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.container{width:min(calc(100% - 24px),var(--container))}.brand-divider,.brand-context,.nav{display:none}.hero{min-height:auto;padding:62px 0 42px}.hero h1{font-size:52px}.stats,.benefits{grid-template-columns:repeat(2,1fr)}.assortment-grid{grid-template-columns:repeat(3,1fr)}.section{padding:60px 0}.footer-inner{display:grid}.cta{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header class="header"><div class="container header-inner">
+ <div class="brand"><img src="assets/cracken-logo.png" class="brand-logo" alt="Cracken.one"><div class="brand-divider"></div><div class="brand-context">Wholesale Partner<br>Program</div></div>
+ <nav class="nav"><a href="#tiers">Wholesale Tiers</a><a href="#catalog">Catalog</a><a href="#ordering">Ordering</a><a href="#inquiry">Become a Partner</a></nav>
+</div></header>
+
+<main>
+<section class="hero">
+<div class="container">
+ <div class="hero-grid">
+  <div><span class="kicker">Cracken.one × Retail Partners</span><h1>Stock the<br><span>Woodland.</span></h1><p class="hero-copy">A 19-SKU multicolor ROOT upgrade system for specialist board-game stores, online retailers and distribution partners — with mixed-SKU ordering and a clear consumer-facing product architecture.</p><div class="hero-actions"><a href="#tiers" class="btn btn-primary">View Wholesale Tiers</a><a href="#catalog" class="btn btn-outline">Explore the Range</a></div></div>
+  <div class="assortment"><div class="assortment-top"><span>CRACKEN / ROOT</span><span>13 FACTIONS</span></div><div class="assortment-grid">
+   <span class="ai"><img src="assets/factions/marquise-de-cat.svg"></span><span class="ai"><img src="assets/factions/eyrie-dynasties.svg"></span><span class="ai"><img src="assets/factions/woodland-alliance.svg"></span><span class="ai"><img src="assets/factions/vagabond.svg"></span>
+   <span class="ai"><img src="assets/factions/lizard-cult.svg"></span><span class="ai"><img src="assets/factions/riverfolk-company.svg"></span><span class="ai"><img src="assets/factions/underground-duchy.svg"></span><span class="ai"><img src="assets/factions/corvid-conspiracy.svg"></span>
+   <span class="ai"><img src="assets/factions/lord-of-the-hundreds.svg"></span><span class="ai"><img src="assets/factions/keepers-in-iron.svg"></span><span class="ai"><img src="assets/factions/lilypad-diaspora.svg"></span><span class="ai"><img src="assets/factions/twilight-council.svg"></span><span class="ai"><img src="assets/factions/knaves-of-the-deepwood.svg"></span>
+  </div></div>
+ </div>
+ <div class="stats"><div class="stat"><strong>19</strong><span>Retail SKUs</span></div><div class="stat"><strong>13</strong><span>Major Factions</span></div><div class="stat"><strong>5</strong><span>Starter MOQ</span></div><div class="stat"><strong>20</strong><span>Distributor MOQ</span></div></div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="container"><span class="kicker">Why Stock Cracken.one?</span><h2 class="section-title">A repeatable upgrade range, not a one-off print.</h2><div class="benefits">
+ <article class="benefit"><strong>19 Sellable SKUs</strong><p>Customers enter with the Base Game and can return for more factions, landmarks, maps and Hirelings.</p></article>
+ <article class="benefit"><strong>Mixed-SKU MOQ</strong><p>Reach minimum order quantities across different faction packs instead of overstocking one item.</p></article>
+ <article class="benefit"><strong>Clear Consumer MSRP</strong><p>Consistent retail positioning simplifies online listings and shelf pricing.</p></article>
+ <article class="benefit"><strong>Premium Multicolor</strong><p>A visually distinctive specialist product with strong table-presence value.</p></article>
+</div></div>
+</section>
+
+<section class="section" id="tiers">
+<div class="container"><span class="kicker">Wholesale Tiers</span><h2 class="section-title">Better buying terms as volume grows.</h2><p class="section-description">The public wholesale page shows approximate discount from consumer MSRP. Internal COGS, markup and profit structure remain private.</p>
+ <div class="tiers" style="margin-top:32px">
+  <article class="tier"><span class="tier-code">PARTNER / 01</span><h3>Starter Wholesale</h3><div class="moq">MOQ 5</div><span class="discount">≈ 30% BELOW MSRP</span><p>For a first test order or a small curated assortment. Mixed SKUs allowed.</p></article>
+  <article class="tier featured"><span class="tier-code">PARTNER / 02</span><h3>Dealer</h3><div class="moq">MOQ 10</div><span class="discount">≈ 36% BELOW MSRP</span><p>For regular retail partners building a broader faction and expansion assortment.</p></article>
+  <article class="tier"><span class="tier-code">PARTNER / 03</span><h3>Distributor</h3><div class="moq">MOQ 20</div><span class="discount">≈ 42% BELOW MSRP</span><p>For volume partners. Territory, lead time and payment terms are quoted separately.</p></article>
+ </div>
+</div>
+</section>
+
+<section class="section section-alt" id="catalog">
+<div class="container"><span class="kicker">Wholesale Catalog</span><h2 class="section-title">Merchandise the range by expansion.</h2><p class="section-description">Retail partners do not need to stock all 19 packs. Start with the expansion families your customers already own.</p>
+ <div class="catalog-grid" style="margin-top:32px">
+  <article class="catalog-card"><div class="catalog-icons"><img src="assets/factions/marquise-de-cat.svg"><img src="assets/factions/eyrie-dynasties.svg"><img src="assets/factions/woodland-alliance.svg"><img src="assets/factions/vagabond.svg"></div><h3>Base Game</h3><p>Marquise, Eyrie, Woodland Alliance and Vagabond / Ruins.</p><div class="catalog-meta">RU-01 — RU-04</div></article>
+  <article class="catalog-card"><div class="catalog-icons"><img src="assets/factions/lizard-cult.svg"><img src="assets/factions/riverfolk-company.svg"></div><h3>Riverfolk</h3><p>Lizard Cult and Riverfolk Company.</p><div class="catalog-meta">RU-06 — RU-07</div></article>
+  <article class="catalog-card"><div class="catalog-icons"><img src="assets/factions/underground-duchy.svg"><img src="assets/factions/corvid-conspiracy.svg"></div><h3>Underworld</h3><p>Duchy, Corvid and compatible map extras.</p><div class="catalog-meta">RU-05 / RU-08 / RU-09</div></article>
+  <article class="catalog-card"><div class="catalog-icons"><img src="assets/factions/lord-of-the-hundreds.svg"><img src="assets/factions/keepers-in-iron.svg"></div><h3>Marauder</h3><p>Lord of the Hundreds and Keepers in Iron.</p><div class="catalog-meta">RU-10 — RU-11</div></article>
+  <article class="catalog-card"><div class="catalog-icons"><img src="assets/factions/lilypad-diaspora.svg"><img src="assets/factions/twilight-council.svg"><img src="assets/factions/knaves-of-the-deepwood.svg"></div><h3>Homeland</h3><p>Three new faction packs plus landmarks and map content.</p><div class="catalog-meta">RU-14 — RU-18</div></article>
+  <article class="catalog-card"><div class="catalog-icons" style="font-size:29px">🏛️ ⚔️</div><h3>Optional Add-ons</h3><p>Classic Landmarks, Classic Hirelings and Homeland Hirelings.</p><div class="catalog-meta">RU-12 / RU-13 / RU-19</div></article>
+ </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container"><span class="kicker">Example Retail Opportunity</span><h2 class="section-title">A clear gap between wholesale and MSRP.</h2><p class="section-description">Illustrative current pricing. Final wholesale quotation depends on order tier and SKU mix.</p>
+ <div class="table-wrap" style="margin-top:28px"><table><thead><tr><th>Pack</th><th>MSRP</th><th>Starter</th><th>Dealer</th><th>Distributor</th><th>Potential Retail Spread*</th></tr></thead><tbody>
+  <tr><td>RU-01 — Marquise de Cat</td><td>1.60M T</td><td>~1.10M T</td><td>~1.00M T</td><td>~0.90M T</td><td>Up to ~0.70M T</td></tr>
+  <tr><td>RU-08 — Underground Duchy</td><td>2.00M T</td><td>~1.40M T</td><td>~1.30M T</td><td>~1.15M T</td><td>Up to ~0.85M T</td></tr>
+  <tr><td>RU-11 — Keepers in Iron</td><td>1.40M T</td><td>~1.00M T</td><td>~0.90M T</td><td>~0.80M T</td><td>Up to ~0.60M T</td></tr>
+ </tbody></table></div><p style="color:var(--muted-2);font-size:10px">*Difference versus current MSRP before the retailer's own operating costs, taxes, payment fees or promotions.</p>
+</div>
+</section>
+
+<section class="section section-alt" id="ordering">
+<div class="container"><span class="kicker">Ordering & Fulfillment</span><h2 class="section-title">Build an assortment around your customers.</h2>
+ <div class="order-grid"><div class="info-panel"><h3>Mixed-SKU Ordering</h3><ul><li>Combine different faction packs to reach MOQ.</li><li>Start with Base Game and best-selling expansions.</li><li>Add Landmarks / Hirelings only where demand exists.</li><li>Expansion bundles can be quoted as retail-ready sets.</li></ul></div>
+ <div class="info-panel"><h3>Commercial Terms</h3><ul><li>Lead time confirmed per order size and assortment.</li><li>Shipping quoted separately.</li><li>Payment terms subject to partner approval.</li><li>Distributor territory and exclusivity discussed case by case.</li></ul></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="container"><span class="kicker">Wholesale FAQ</span><h2 class="section-title">Before you place an order.</h2>
+ <details><summary>Can different SKUs be combined to reach MOQ?</summary><p>Yes. Mixed-SKU orders are part of the current wholesale model.</p></details>
+ <details><summary>Do I need to stock all 19 packs?</summary><p>No. We recommend starting with the factions and expansions your customers are most likely to own.</p></details>
+ <details><summary>Can I order expansion bundles?</summary><p>Yes. Expansion and complete-range assortments can be included in a wholesale quotation.</p></details>
+ <details><summary>Are the displayed wholesale prices final?</summary><p>No. The public page communicates the commercial structure. Final pricing is confirmed in the partner quote.</p></details>
+</div>
+</section>
+
+<section class="section" id="inquiry">
+<div class="container"><div class="cta"><div><span class="kicker" style="color:#000">Become a Cracken.one Partner</span><h2>Request the wholesale catalog.</h2><p>Tell us your store type, market, expected order size and preferred assortment. We'll prepare the appropriate tier and product mix.</p></div><a href="#" class="btn">Request Wholesale Pricing</a></div></div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div><img src="assets/cracken-logo.png" class="footer-logo" alt="Cracken.one"></div><div>Cracken.one wholesale program.<br>Unofficial third-party ROOT upgrade collection. Final partner terms are confirmed by quotation.</div></div></footer>
+</body>
+</html>
